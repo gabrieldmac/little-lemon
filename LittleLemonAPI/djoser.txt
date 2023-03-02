@@ -1,0 +1,15 @@
+Endpoints supported by djoser:
+
+/users/ -List all the users, post to create a new one
+/users/me/
+/users/confirm/
+/users/resend_activation/
+/users/set_password/
+/users/reset_password/
+/users/reset_password_confirm/
+/token/login/ - Create token
+/token/logout/
+
+endpoint: http://127.0.0.1:8000/auth
+
+ Djoser offer JWT

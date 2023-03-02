@@ -58,8 +58,13 @@ def single_item(request, pk):
 def secret(request):
     return Response({"message":"Some secret message"})
 
-
-
+@api_view()
+@permission_classes([IsAuthenticated])
+def manager_view(request):
+    if request.user.groups.filter(name='Manager').exists():
+        return Response({"message":"Only managers should see this"})
+    else:
+        return Response({"message":"You are not authorized"}, 403)
 
 # class MenuItemsView(generics.ListCreateAPIView):
 #     queryset = MenuItem.objects.select_related('category').all()

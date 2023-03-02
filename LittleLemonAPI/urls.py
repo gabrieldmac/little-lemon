@@ -7,5 +7,6 @@ urlpatterns = [
     path('menu-item', views.menu_items),
     path('menu-item/<int:pk>', views.single_item),
     path('secret/', views.secret),
-    path('api-token-auth/', obtain_auth_token)
+    path('api-token-auth/', obtain_auth_token),
+    path('manager-view/', views.manager_view)
 ]
